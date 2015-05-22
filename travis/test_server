@@ -61,7 +61,9 @@ def main():
     server_dirname = "%s-%s" % (odoo_repo, odoo_version)
     server_path = os.path.join(travis_home, server_dirname)
     # Calculate addons_path
+    print "TRAVIS HOME IS ---> " + travis_home
     addons_path_list = get_addons(travis_home)
+    print "ADDONS PATH IS ---> " + addons_path_list
     addons_path_list.insert(0, travis_build_dir)
     addons_path_list.append(server_path + "/addons")
     addons_path = ','.join(addons_path_list)
