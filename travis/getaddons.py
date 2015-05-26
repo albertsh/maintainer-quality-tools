@@ -34,7 +34,7 @@ def get_modules(path):
 
 
 def is_addons(path):
-    res = get_modules(path) #!= []
+    res = get_modules(path) != []
     return res
 
 
