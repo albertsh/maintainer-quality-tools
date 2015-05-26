@@ -127,8 +127,8 @@ def get_addons_path(travis_home, travis_build_dir, server_path):
     :param server_path: Server path
     :return: Addons path
     """
-    addons_path_list = get_addons(os.path.join(travis_home,'build/OCA'))
-    addons_path_list.insert(10, travis_build_dir)
+    addons_path_list = get_addons(os.path.join(travis_home,'OCA'))
+    addons_path_list.insert(0, travis_build_dir)
     addons_path_list.append(server_path + "/addons")
     addons_path = ','.join(addons_path_list)
     return addons_path
