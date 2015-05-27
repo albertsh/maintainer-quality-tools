@@ -155,7 +155,7 @@ def get_addons_to_check(travis_build_dir, odoo_include, odoo_exclude):
     return addons_list
 
 
-def setup_server(db, odoo_unittest, tested_addons, server_path,
+#def setup_server(db, odoo_unittest, tested_addons, server_path,
                  addons_path, install_options):
     """
     Setup the base module before running the tests
@@ -166,7 +166,7 @@ def setup_server(db, odoo_unittest, tested_addons, server_path,
     :param addons_path: Addons path
     :param install_options: Install options (travis parameter)
     """
-    print("\nCreating instance:")
+    """print("\nCreating instance:")
     subprocess.check_call(["createdb", db])
     preinstall_modules = 'mail' if odoo_unittest else tested_addons
     cmd_odoo = ["%s/openerp-server" % server_path,
@@ -178,7 +178,7 @@ def setup_server(db, odoo_unittest, tested_addons, server_path,
                 ] + install_options
     print(" ".join(cmd_odoo))
     subprocess.check_call(cmd_odoo)
-    return 0
+    return 0"""
 
 
 def main():
