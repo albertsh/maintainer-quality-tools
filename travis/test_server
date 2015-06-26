@@ -101,9 +101,9 @@ def main():
     subprocess.check_call(cmd_odoo % cmd_options, shell=True)
 
     print("\nRunning tests:")
-    cmd_odoo = "coverage run %s/openerp-server %s -d %s --stop-after-init " \
+    cmd_odoo = "coverage run %s/openerp-server %s -c %s/odoo.conf -d %s --stop-after-init " \
                "--addons-path=%s --init=%s --log-level=test"
-    cmd_options = (server_path, options, database,
+    cmd_options = (server_path, options, server_path, database,
                    addons_path, tested_addons)
     command = cmd_odoo % cmd_options
     print(command)
